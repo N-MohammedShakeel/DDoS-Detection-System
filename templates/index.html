@@ -1,0 +1,48 @@
+<!-- Save as templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDoS Test Server</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        text-align: center;
+      }
+      header {
+        background-color: #007bff;
+        color: white;
+        padding: 1rem;
+      }
+      h1 {
+        margin: 0;
+      }
+      main {
+        padding: 2rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>DDoS Test Server</h1>
+    </header>
+    <main>
+      <p>Welcome to the DDoS Detection Test Server.</p>
+      <p>
+        This server is used to simulate HTTP requests for DDoS detection
+        testing.
+      </p>
+      <p>IP: {{ request.remote_addr }}</p>
+      <p>URL: {{ request.path }}</p>
+      <p>Time: {{ current_time }}</p>
+    </main>
+  </body>
+</html>
