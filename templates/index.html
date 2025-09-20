@@ -1,48 +1,60 @@
-<!-- Save as templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DDoS Test Server</title>
+    <title>Test Server</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #f0f2f5;
         color: #333;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
       }
-      header {
-        background-color: #007bff;
-        color: white;
-        padding: 1rem;
+      .container {
+        text-align: center;
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
       }
       h1 {
-        margin: 0;
-      }
-      main {
-        padding: 2rem;
+        color: #1c1e21;
+        margin-bottom: 10px;
       }
       p {
-        font-size: 1.2rem;
+        color: #606770;
+        font-size: 1.1em;
+      }
+      .status {
+        margin-top: 25px;
+        padding: 12px 20px;
+        border-radius: 6px;
+        font-weight: 500;
+      }
+      .status-ok {
+        background-color: #e9f5e9;
+        border-left: 5px solid #42b72a;
+        color: #38584a;
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>DDoS Test Server</h1>
-    </header>
-    <main>
-      <p>Welcome to the DDoS Detection Test Server.</p>
+    <div class="container">
+      <h1>🌐 Test Web Server</h1>
       <p>
-        This server is used to simulate HTTP requests for DDoS detection
-        testing.
+        This server is the target for the DDoS detection system. All requests to
+        this page are logged for analysis.
       </p>
-      <p>IP: {{ request.remote_addr }}</p>
-      <p>URL: {{ request.path }}</p>
-      <p>Time: {{ current_time }}</p>
-    </main>
+      <div class="status status-ok">
+        <p><strong>Status:</strong> Server is online and logging requests.</p>
+      </div>
+    </div>
   </body>
 </html>

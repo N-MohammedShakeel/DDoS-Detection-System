@@ -1,5 +1,5 @@
 # flask_server.py
-from flask import Flask, request
+from flask import Flask, request, render_template
 import logging
 import os
 import pandas as pd
@@ -36,10 +36,13 @@ def home(path):
     url = request.full_path
     timestamp = pd.Timestamp.now().isoformat()
     
-    # Log the request in the specific format our monitor needs
+    # This critical logging part remains the same
     access_logger.info(f'IP: {client_ip}, URL: {url}, Time: {timestamp}')
     
-    return "Request logged."
+    # --- MODIFIED LINE ---
+    # Instead of returning plain text, render the beautiful HTML page
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
     # Make sure to give the database a moment to initialize if run in parallel
